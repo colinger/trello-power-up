@@ -5,19 +5,22 @@ var onSortBtnClick = function (t, opts) {
   console.log(JSON.stringify(t));
 };
 var onDoneBtnClick = function (t, opts) {
-    t.list('all')
-    .then(function (board) {
-      console.log(JSON.stringify(board, null, 2));
-    });
+    // t.list('all')
+    // .then(function (board) {
+    //   console.log(JSON.stringify(board, null, 2));
+    // });
    return t.card('all').then(function (card){
-    console.log(JSON.stringify(card, null, 2));
+    // console.log(JSON.stringify(card, null, 2));
     //card.id
     fetch('https://api.trello.com/1/cards/'+card.id+'?key=%%APP_KEY%%&token=%%TOKEN%%',{
         method: 'PUT',
+        body: JSON.stringify({
+            dueComplete: 'true',
+            idList: '5f4c64f6812a2719e38eb563'
+        }),
         headers: {
             'Accept': 'application/json'
-        },
-        body: 'dueComplete=true'
+        }
     })
     .then(response => response.json())
     .then(data => console.log(JSON.stringify(data, null, 2)));
