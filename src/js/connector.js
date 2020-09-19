@@ -12,12 +12,16 @@ var onDoneBtnClick = function (t, opts) {
    return t.card('all').then(function (card){
     // console.log(JSON.stringify(card, null, 2));
     //card.id
+    let content = JSON.stringify({
+        dueComplete: true,
+        idList: '5f4c64f6812a2719e38eb563'
+    });
+    console.log('url: ' + 'https://api.trello.com/1/cards/'+card.id+'?key=%%APP_KEY%%&token=%%TOKEN%%');
+    console.log('card id: ' + card.id);
+    console.log('body: ' + content);
     fetch('https://api.trello.com/1/cards/'+card.id+'?key=%%APP_KEY%%&token=%%TOKEN%%',{
         method: 'PUT',
-        body: JSON.stringify({
-            dueComplete: 'true',
-            idList: '5f4c64f6812a2719e38eb563'
-        }),
+        body: ,
         headers: {
             'Accept': 'application/json'
         }
