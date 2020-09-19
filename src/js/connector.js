@@ -2,6 +2,7 @@ var GRAY_ICON = 'https://cdn.hyperdev.com/us-east-1%3A3d31b21c-01a0-4da2-8827-4b
 
 var onSortBtnClick = function (t, opts) {
   console.log('Someone clicked the sort button');
+  console.log(JSON.parse(opts));
 };
 var onDoneBtnClick = function (t, opts) {
     console.log('Someone clicked the done button');
