@@ -23,20 +23,22 @@ var onDoneBtnClick = function (t, opts) {
 
 window.TrelloPowerUp.initialize({
   'card-buttons': function (t, opts) {
-    return [{
-      // usually you will provide a callback function to be run on button click
-      // we recommend that you use a popup on click generally
-      icon: GRAY_ICON, // don't use a colored icon here
-      text: '排序',
-      callback: onSortBtnClick,
-      condition: 'edit'
-    }, {
-      // but of course, you could also just kick off to a url if that's your thing
-      icon: 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/docomo/205/heavy-check-mark_2714.png',
-      text: '完成',
-      callback: onDoneBtnClick,
-      condition: 'edit'
-    }];
+    return t.getRestApi()
+    	// We now have an instance of the API client.
+      .isAuthorized()
+      .then(function(isAuthorized) {
+        if (isAuthorized) {
+          return [{
+            text: 'David\'s Power-Up',
+            callback: showMenu
+          }];
+        } else {
+          return [{
+            text: 'David\'s Power-Up',
+            callback: showIframe
+          }];
+        }
+      });
   }
 }, 
 {
