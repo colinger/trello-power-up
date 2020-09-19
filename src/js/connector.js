@@ -2,10 +2,6 @@ var GRAY_ICON = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thum
 
 const fetch = require('node-fetch');
 
-var onSortBtnClick = function (t, opts) {
-  console.log('Someone clicked the sort button');
-  console.log(JSON.stringify(t));
-};
 var onDoneBtnClick = function (t, opts) {
     // t.list('all')
     // .then(function (board) {
@@ -36,13 +32,6 @@ var onDoneBtnClick = function (t, opts) {
 window.TrelloPowerUp.initialize({
   'card-buttons': function (t, opts) {
     return [{
-      // usually you will provide a callback function to be run on button click
-      // we recommend that you use a popup on click generally
-      icon: GRAY_ICON, // don't use a colored icon here
-      text: '排序',
-      callback: onSortBtnClick,
-      condition: 'edit'
-    }, {
       // but of course, you could also just kick off to a url if that's your thing
       icon: 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/docomo/205/heavy-check-mark_2714.png',
       text: '完成',
