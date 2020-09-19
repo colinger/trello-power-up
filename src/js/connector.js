@@ -5,8 +5,10 @@ var onSortBtnClick = function (t, opts) {
   console.log(JSON.stringify(t));
 };
 var onDoneBtnClick = function (t, opts) {
-    console.log('Someone clicked the done button');
-  };
+   return t.card('all').then(function (card){
+    console.log(JSON.stringify(card, null, 2));
+   });
+};
 
 window.TrelloPowerUp.initialize({
   'card-buttons': function (t, opts) {
