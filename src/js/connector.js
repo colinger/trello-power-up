@@ -2,7 +2,7 @@ var GRAY_ICON = 'https://cdn.hyperdev.com/us-east-1%3A3d31b21c-01a0-4da2-8827-4b
 
 var onSortBtnClick = function (t, opts) {
   console.log('Someone clicked the sort button');
-  console.log(JSON.parse(opts));
+  console.log(JSON.stringify(opts));
 };
 var onDoneBtnClick = function (t, opts) {
     console.log('Someone clicked the done button');
@@ -25,4 +25,8 @@ window.TrelloPowerUp.initialize({
       condition: 'edit'
     }];
   }
+}, 
+{
+    appName: 'MyTool',
+    appKey: '3223224f4dacfccedd728fac62c4352d'
 });
