@@ -23,8 +23,12 @@ var onDoneBtnClick = function (t, opts) {
                 'Accept': 'application/json'
             }
         })
-        .then(response => response.json())
-        .then(data => console.log(JSON.stringify(data, null, 2)));
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(JSON.stringify(data, null, 2));
+        });
     });
 };
 
