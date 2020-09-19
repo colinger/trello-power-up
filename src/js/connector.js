@@ -21,7 +21,7 @@ var onDoneBtnClick = function (t, opts) {
     console.log('body: ' + content);
     fetch('https://api.trello.com/1/cards/'+card.id+'?key=%%APP_KEY%%&token=%%TOKEN%%',{
         method: 'PUT',
-        body: ,
+        body: content,
         headers: {
             'Accept': 'application/json'
         }
