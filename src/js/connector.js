@@ -13,7 +13,7 @@ var onDoneBtnClick = function (t, opts) {
         headers: {
             'Accept': 'application/json'
         },
-        body: JSON.stringify({"dueComplete":true})
+        body: {"dueComplete":true}
     })
     .then(response => response.json())
     .then(data => console.log(JSON.stringify(data, null, 2)));
