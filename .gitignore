@@ -1,0 +1,10 @@
+.cache/
+dist/
+*.tgz
+.node_repl_history
+.yarn-intergity
+.evn
+.next
+
+node_modules
+*.lock
