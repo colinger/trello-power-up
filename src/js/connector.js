@@ -16,10 +16,10 @@ var onDoneBtnClick = function (t, opts) {
         fetch('https://api.trello.com/1/cards/'+card.id+'?key=%%APP_KEY%%&token=%%TOKEN%%',{
             method: 'PUT',
             body: JSON.stringify({
-                dueComplete: true,
-                idList: '5f4c64f6812a2719e38eb563'
+                "dueComplete": true,
+                "idList": '5f4c64f6812a2719e38eb563'
             }),
-            headers: {
+            headers: {  
                 'Accept': 'application/json'
             }
         })
