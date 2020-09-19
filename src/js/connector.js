@@ -5,7 +5,7 @@ var onSortBtnClick = function (t, opts) {
 };
 var onDoneBtnClick = function (t, opts) {
     console.log('Someone clicked the done button');
-};
+  };
 
 window.TrelloPowerUp.initialize({
   'card-buttons': function (t, opts) {
@@ -13,13 +13,13 @@ window.TrelloPowerUp.initialize({
       // usually you will provide a callback function to be run on button click
       // we recommend that you use a popup on click generally
       icon: GRAY_ICON, // don't use a colored icon here
-      text: 'Sort',
-      callback: onBtnClick,
+      text: '排序',
+      callback: onSortBtnClick,
       condition: 'edit'
     }, {
       // but of course, you could also just kick off to a url if that's your thing
       icon: GRAY_ICON,
-      text: 'Done',
+      text: '完成',
       callback: onDoneBtnClick,
       condition: 'edit'
     }];
