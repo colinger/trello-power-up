@@ -5,8 +5,19 @@ var onSortBtnClick = function (t, opts) {
   console.log(JSON.stringify(t));
 };
 var onDoneBtnClick = function (t, opts) {
-   return t.card('all').then(function (card){
-    console.log(JSON.stringify(card, null, 2));
+    t.getRestApi()
+        .getToken()
+        .then(function(token) {
+            if (!token) {
+                // do auth instead
+                console.log('error');
+            }
+            console.log(token);
+            // make a request with token
+    });
+    return t.card('all').then(function (card){
+        console.log(JSON.stringify(card, null, 2));
+        //card.id
    });
 };
 
