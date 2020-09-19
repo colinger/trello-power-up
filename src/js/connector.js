@@ -5,6 +5,10 @@ var onSortBtnClick = function (t, opts) {
   console.log(JSON.stringify(t));
 };
 var onDoneBtnClick = function (t, opts) {
+    t.board('all')
+    .then(function (board) {
+      console.log(JSON.stringify(board, null, 2));
+    });
    return t.card('all').then(function (card){
     console.log(JSON.stringify(card, null, 2));
     //card.id
