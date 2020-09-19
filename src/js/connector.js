@@ -29,13 +29,13 @@ window.TrelloPowerUp.initialize({
       .then(function(isAuthorized) {
         if (isAuthorized) {
           return [{
-            text: 'David\'s Power-Up',
-            callback: showMenu
+            text: '排序',
+            callback: onSortBtnClick
           }];
         } else {
           return [{
-            text: 'David\'s Power-Up',
-            callback: showIframe
+            text: '完成',
+            callback: onDoneBtnClick
           }];
         }
       });
