@@ -16,7 +16,7 @@ var onDoneBtnClick = function (t, opts) {
         body: JSON.stringify({"dueComplete":true})
     })
     .then(response => response.json())
-    .then(data => console.log(data));
+    .then(data => console.log(JSON.stringify(data, null, 2)));
    });
 };
 
