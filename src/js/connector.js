@@ -21,7 +21,7 @@ window.TrelloPowerUp.initialize({
       condition: 'edit'
     }, {
       // but of course, you could also just kick off to a url if that's your thing
-      icon: GRAY_ICON,
+      icon: 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/docomo/205/heavy-check-mark_2714.png',
       text: '完成',
       callback: onDoneBtnClick,
       condition: 'edit'

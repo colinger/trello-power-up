@@ -3593,6 +3593,13 @@ parcel-bundler@^1.12.4:
     v8-compile-cache "^2.0.0"
     ws "^5.1.1"
 
+parcel-plugin-interpolate-env@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npm.taobao.org/parcel-plugin-interpolate-env/download/parcel-plugin-interpolate-env-0.0.1.tgz#e23e71cabd2491c02a73216ee21e7a14b0430fda"
+  integrity sha1-4j5xyr0kkcAqcyFu4h56FLBDD9o=
+  dependencies:
+    escape-string-regexp "^1.0.5"
+
 parse-asn1@^5.0.0, parse-asn1@^5.1.5:
   version "5.1.6"
   resolved "https://registry.npm.taobao.org/parse-asn1/download/parse-asn1-5.1.6.tgz?cache=0&sync_timestamp=1597165710136&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fparse-asn1%2Fdownload%2Fparse-asn1-5.1.6.tgz#385080a3ec13cb62a62d39409cb3e88844cdaed4"
