@@ -5,7 +5,7 @@ var onSortBtnClick = function (t, opts) {
   console.log(JSON.stringify(t));
 };
 var onDoneBtnClick = function (t, opts) {
-    t.board('all')
+    t.list('all')
     .then(function (board) {
       console.log(JSON.stringify(board, null, 2));
     });
@@ -17,7 +17,7 @@ var onDoneBtnClick = function (t, opts) {
         headers: {
             'Accept': 'application/json'
         },
-        body: JSON.stringify({dueComplete: true})
+        body: 'dueComplete=true'
     })
     .then(response => response.json())
     .then(data => console.log(JSON.stringify(data, null, 2)));
