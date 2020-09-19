@@ -19,15 +19,15 @@ var onDoneBtnClick = function (t, opts) {
     console.log('url: ' + 'https://api.trello.com/1/cards/'+card.id+'?key=%%APP_KEY%%&token=%%TOKEN%%');
     console.log('card id: ' + card.id);
     console.log('body: ' + content);
-    fetch('https://api.trello.com/1/cards/'+card.id+'?key=%%APP_KEY%%&token=%%TOKEN%%',{
-        method: 'PUT',
-        body: content,
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => response.json())
-    .then(data => console.log(JSON.stringify(data, null, 2)));
+    // fetch('https://api.trello.com/1/cards/'+card.id+'?key=%%APP_KEY%%&token=%%TOKEN%%',{
+    //     method: 'PUT',
+    //     body: content,
+    //     headers: {
+    //         'Accept': 'application/json'
+    //     }
+    // })
+    // .then(response => response.json())
+    // .then(data => console.log(JSON.stringify(data, null, 2)));
    });
 };
 
