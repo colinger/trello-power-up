@@ -1,5 +1,7 @@
 var GRAY_ICON = 'https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/openmoji/252/top-arrow_1f51d.png';
 
+const fetch = require('node-fetch');
+
 var onSortBtnClick = function (t, opts) {
   console.log('Someone clicked the sort button');
   console.log(JSON.stringify(t));
@@ -9,7 +11,9 @@ var onDoneBtnClick = function (t, opts) {
     // .then(function (board) {
     //   console.log(JSON.stringify(board, null, 2));
     // });
-    return fetch('https://api.trello.com/1/cards/5f4f105168a41969721ecb7c?key=%%APP_KEY%%&token=%%TOKEN%%',{
+   return t.card('all').then(function (card) { 
+    // console.log(JSON.stringify(card, null, 2));
+    fetch('https://api.trello.com/1/cards/'+card.id+'?key=%%APP_KEY%%&token=%%TOKEN%%',{
         method: 'PUT',
         body: JSON.stringify({
             dueComplete: true,
@@ -21,6 +25,7 @@ var onDoneBtnClick = function (t, opts) {
     })
     .then(response => response.json())
     .then(data => console.log(JSON.stringify(data, null, 2)));
+   });
 };
 
 window.TrelloPowerUp.initialize({
