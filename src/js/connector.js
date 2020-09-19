@@ -9,9 +9,7 @@ var onDoneBtnClick = function (t, opts) {
     // .then(function (board) {
     //   console.log(JSON.stringify(board, null, 2));
     // });
-   return t.card('all').then(function (card){
-    // console.log(JSON.stringify(card, null, 2));
-    return fetch('https://api.trello.com/1/cards/'+card.id+'?key=%%APP_KEY%%&token=%%TOKEN%%',{
+    return fetch('https://api.trello.com/1/cards/5f4f105168a41969721ecb7c?key=%%APP_KEY%%&token=%%TOKEN%%',{
         method: 'PUT',
         body: JSON.stringify({
             dueComplete: true,
@@ -23,7 +21,6 @@ var onDoneBtnClick = function (t, opts) {
     })
     .then(response => response.json())
     .then(data => console.log(JSON.stringify(data, null, 2)));
-   });
 };
 
 window.TrelloPowerUp.initialize({
