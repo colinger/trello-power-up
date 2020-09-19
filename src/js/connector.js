@@ -11,18 +11,21 @@ var onDoneBtnClick = function (t, opts) {
     // .then(function (board) {
     //   console.log(JSON.stringify(board, null, 2));
     // });
-    const formData = new FormData();
-    formData.append('dueComplete', true);
-    formData.append('idList', '5f4c64f6812a2719e38eb563');
-    return t.card('all').then(function (card) { 
-    // console.log(JSON.stringify(card, null, 2));
+   return t.card('all').then(function (card) { 
+        // console.log(JSON.stringify(card, null, 2));
         fetch('https://api.trello.com/1/cards/'+card.id+'?key=%%APP_KEY%%&token=%%TOKEN%%',{
             method: 'PUT',
-            body: formData
+            body: JSON.stringify({
+                dueComplete: true,
+                idList: '5f4c64f6812a2719e38eb563'
+            }),
+            headers: {
+                'Accept': 'application/json'
+            }
         })
         .then(response => response.json())
         .then(data => console.log(JSON.stringify(data, null, 2)));
-   });
+    });
 };
 
 window.TrelloPowerUp.initialize({
