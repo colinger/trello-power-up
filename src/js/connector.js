@@ -40,8 +40,7 @@ window.TrelloPowerUp.initialize({
         }
       });
   }
-}, 
-{
+}, {
     appName: 'MyTool',
     appKey: '3223224f4dacfccedd728fac62c4352d'
 });
